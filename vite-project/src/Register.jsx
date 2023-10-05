@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import axios from 'axios';
+import './Register.css'
 import { useNavigate,Link } from "react-router-dom";
 function Register() {
     const [name, setName] = useState('');
@@ -34,20 +35,20 @@ function Register() {
     }
 
     return (
-        <><center >
-            <h1>Register</h1>
-            <form onSubmit={handleSubmit} className="w-25 border border-primary p-4">
+        <><center className='background'>
+            <h1 className='text-white bg-primary'>Register</h1>
+            <form onSubmit={handleSubmit} className="w-25 border form_class p-4 m-4">
 
                 {<h1>{success}</h1>}
                 {<h1>{error}</h1>}
 
-                <input className='form-control border border-dark' type="text" placeholder='Name' onChange={(e) => setName(e.target.value)} />
+                <input required className='form-control border border-dark' type="text" placeholder='Name' onChange={(e) => setName(e.target.value)} />
                 <br />
 
-                <input className='form-control border border-dark' type="text" placeholder='Email' onChange={(e) => setEmail(e.target.value)} />
+                <input required className='form-control border border-dark' type="text" placeholder='Email' onChange={(e) => setEmail(e.target.value)} />
                 <br />
 
-                <input className='form-control border border-dark' type="text" placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
+                <input required className='form-control border border-dark' type="text" placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
                 <br />
                 <p>Already have account ? <Link to='/login'>login here</Link></p>
                 <input className='btn btn-primary' type="submit" value="Register" />
