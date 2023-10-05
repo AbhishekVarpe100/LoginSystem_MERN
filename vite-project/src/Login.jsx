@@ -22,13 +22,13 @@ export default function Login() {
                         setTimeout(() => {
                             navigate('/Home')
                         }, 500)
-                    }, 4000)
+                    }, 2000)
                 }
                 else if (res.data == 'fail') {
                     setFailure(<div className='alert alert-danger'>Login failed...User Not found</div>);
                     setTimeout(() => {
                         setFailure("")
-                    }, 5000)
+                    }, 3000)
                 }
             })
             .catch(err => {

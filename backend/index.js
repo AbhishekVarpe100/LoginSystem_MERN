@@ -92,7 +92,7 @@ app.delete('/delete/:id',(req,res)=>{
                 console.log(err)
             }
             else{
-                console.log("Deleted successfully")
+                res.json("success")
             }
         })
         

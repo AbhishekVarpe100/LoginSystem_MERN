@@ -20,15 +20,15 @@ function Register() {
                         setSuccess("")
                         setTimeout(() => {
                             navigate('/Login')
-                        }, 1000)
-                    }, 5000)
+                        }, 500)
+                    }, 2000)
                 }
             })
             .catch(err => {
                 setError(<div className='alert alert-danger'>{err}</div>)
                 setTimeout(() => {
                     setError("")
-                }, 5000)
+                }, 3000)
             })
 
     }
