@@ -30,7 +30,7 @@ myconnection.connect((err) => {
 app.post('/create', async (req, res) => {
     try {
         const { name, email, password } = req.body;
-        myconnection.query('insert into demo(name,email,password) values(?,?,?)', [name, email, password], (err, result) => {
+        myconnection.query('insert into demo2(name,email,password) values(?,?,?)', [name, email, password], (err, result) => {
             if (err) {
                 res.json("failure")
             }
@@ -49,7 +49,7 @@ app.post('/create', async (req, res) => {
 app.post('/login', async (req, res) => {
     try {
         const { name, password } = req.body;
-        myconnection.query('select * from demo where name=? and password=?', [name, password], (err, result) => {
+        myconnection.query('select * from demo2 where name=? and password=?', [name, password], (err, result) => {
             if (err) {
                 res.json('fail')
             }
@@ -68,6 +68,39 @@ app.post('/login', async (req, res) => {
 
 })
 
+
+
+app.get('/getdata',async(req,res)=>{
+        myconnection.query('select * from demo2',(err,results)=>{
+            if(err){
+                console.log(err)
+            }
+            else{
+                console.log(results)
+                res.json(results)
+            }
+        })
+})
+
+app.delete('/delete/:id',(req,res)=>{
+    // const {id}=req.params;
+    //or
+    const id=req.params.id;
+    try {
+        myconnection.query("delete from demo2 where id=?",[id],(err,result)=>{
+            if(err){
+                console.log(err)
+            }
+            else{
+                console.log("Deleted successfully")
+            }
+        })
+        
+    } catch (error) {
+        console.log(error);
+    }
+})
+   
 app.listen(3000, (req, res) => {
     console.log("Started server")
 })

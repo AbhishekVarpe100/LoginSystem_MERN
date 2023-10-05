@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './Navbar'
 import Login from './Login';
 import Home from './Home';
+import GetData from './GetData';
 import Register from './Register';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -15,6 +16,7 @@ export default function App() {
           <Route path='/login' element={<Login></Login>}></Route>
           <Route path='/register' element={<Register></Register>}></Route>
           <Route path='/home' element={<Home></Home>}></Route>
+          <Route path='/getdata' element={<GetData></GetData>}></Route>
         </Routes>
       </Router>
     </div>

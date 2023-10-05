@@ -43,8 +43,8 @@ export default function Login() {
                 <form onSubmit={handleLogin} className="w-25 border border-primary p-4">
                     <div>{success}</div>
                     <div>{failure}</div>
-                    <input className='form-control border border-dark' type="text" placeholder='Username' onChange={(e) => setName(e.target.value)} /><br /><br />
-                    <input className='form-control border border-dark' type="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)} /><br />
+                    <input className='form-control border border-dark' required type="text" placeholder='Username' onChange={(e) => setName(e.target.value)} /><br /><br />
+                    <input className='form-control border border-dark' required type="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)} /><br />
                     <p>Not have account ? <Link to='/register'>create account</Link></p>
                     <input className='btn btn-primary' value="Login" type="submit" />
                 </form>
