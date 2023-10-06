@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import './Login.css'
 import Home from './Home';
 import { Link, useNavigate } from 'react-router-dom';
 export default function Login() {
@@ -39,12 +38,12 @@ export default function Login() {
     return (
         <div>
             <center className='login_class'>
-                <h1 className='bg-primary text-white'>Login</h1>
-                <form onSubmit={handleLogin} className="w-25 border form_class border-primary p-4">
+                <h1 className='bg-primary text-white p-4 m-4'>Login</h1>
+                <form onSubmit={handleLogin} className="w-25 border form_class p-4">
                     <div>{success}</div>
                     <div>{failure}</div>
-                    <input className='form-control border border-dark' required type="text" placeholder='Username' onChange={(e) => setName(e.target.value)} /><br /><br />
-                    <input className='form-control border border-dark' required type="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)} /><br />
+                    <input className='form-control' required type="text" placeholder='Username' onChange={(e) => setName(e.target.value)} /><br /><br />
+                    <input className='form-control' required type="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)} /><br />
                     <p>Not have account ? <Link to='/register'>create account</Link></p>
                     <input className='btn btn-primary' value="Login" type="submit" />
                 </form>
